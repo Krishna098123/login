@@ -1,19 +1,15 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $password = $_POST['password'];
 
-    // Validate and process the file upload
-    $uploadDir = 'uploads/';
-    $uploadFile = $uploadDir . basename($_FILES['profile_picture']['name']);
-
-    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $uploadFile)) {
-        // File upload successful, continue with user registration
-        // Perform database insertion or other necessary operations here
-
-        echo "User registered successfully!";
+    // For simplicity, check if the username and password match
+    $hashedPassword = password_hash('example_password', PASSWORD_BCRYPT); // Replace 'example_password' with the actual password used during registration
+    
+    if ($username === 'example' && password_verify($password, $hashedPassword)) {
+        echo "Login successful!";
     } else {
-        echo "Error uploading file!";
+        echo "Invalid credentials!";
     }
 }
 ?>
