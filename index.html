@@ -11,14 +11,29 @@
         <div id="login-form">
             <h2>Login</h2>
             <form id="loginForm" method="post" action="login.php">
-                <!-- Login form content -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
             </form>
         </div>
 
         <div id="register-form">
             <h2>Register</h2>
             <form id="registerForm" method="post" action="register.php" enctype="multipart/form-data">
-                <!-- Register form content -->
+                <label for="regUsername">Username:</label>
+                <input type="text" id="regUsername" name="username" required>
+                
+                <label for="regPassword">Password:</label>
+                <input type="password" id="regPassword" name="password" required>
+                
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" id="profilePicture" name="profile_picture" accept="image/*">
+                
+                <button type="submit">Register</button>
             </form>
         </div>
     </div>
@@ -27,3 +42,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
